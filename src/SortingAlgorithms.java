@@ -1,5 +1,6 @@
 public class SortingAlgorithms {
-    public static void  printArray (int[] arr) {
+    public static void  printArray (int[] arr, String algoName) {
+        System.out.printf("Sorted Array Using %s:\n", algoName);
         for (int num : arr) {
             System.out.print(num + " ");
         }
@@ -17,7 +18,7 @@ public class SortingAlgorithms {
                 }
             }
         }
-        printArray(arr);
+        printArray(arr, "Bubble Sort");
     }
 
     public static void quickSort (int[] arr){
@@ -32,7 +33,7 @@ public class SortingAlgorithms {
             arr[smallest] = arr[i];
             arr[i] = temp;
         }
-        printArray(arr);
+        printArray(arr, "Quick Sort");
     }
 
     public static void insertionSort (int[] arr){
@@ -45,15 +46,17 @@ public class SortingAlgorithms {
             }
             arr[j+1] = current;
         }
-        printArray(arr);
+        printArray(arr, "Insertion Sort");
     }
 
     public static void main(String[] args) {
         int[] arr = {12,43,52,12,63,774,2,45,6,24,90};
         System.out.println("Original Array:");
-        printArray(arr);
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
 
-        System.out.println("Sorted Array:");
         bubbleSort(arr);
         quickSort(arr);
         insertionSort(arr);

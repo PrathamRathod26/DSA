@@ -1,21 +1,18 @@
 package Concepts;
 
-import java.util.LinkedList;
-// This is how LinkedList work under the hood
-
-public class Linkedlist {
+public class linkedlist {
     Node head;
     int size;
 
-    Linkedlist(){
+    linkedlist(){
         this.size=0;
     }
 
     class Node {
-        String data;
+        int data;
         Node next;
 
-        Node(String data){
+        Node(int data){
             this.data = data;
             this.next = null;
             size++;
@@ -23,7 +20,7 @@ public class Linkedlist {
     }
 
     //add first
-    public void addFirst(String data){
+    public void addFirst(int data){
         Node newNode = new Node(data);
         if(head==null){
             head = newNode;
@@ -34,7 +31,7 @@ public class Linkedlist {
         head = newNode;
     }
 
-    public void addLast(String data){
+    public void addLast(int data){
         Node newNode = new Node(data);
         if(head==null){
             head = newNode;
@@ -91,7 +88,7 @@ public class Linkedlist {
             System.out.print(currentNode.data + "->");
             currentNode = currentNode.next;
         }
-        System.out.print("Null" + "\nSize of list: " + size);
+        System.out.print("null");
         System.out.println();
 
     }
@@ -110,21 +107,32 @@ public class Linkedlist {
             prevNode = currNode;
             currNode = nextNode;
         }
+        head.next = null;
+        head = prevNode;
+    }
+
+    public Node reverseRecursive(Node head){
+        if(head == null || head.next == null) {
+            return head;
+        }
+        Node newHead = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
     }
 
     public static void main(String[] args) {
-        Linkedlist list = new Linkedlist();
-        list.addFirst("a");
-        list.addFirst("is");
-        list.addFirst("this");
-        list.printList();
-        list.addLast("Linked");
-        list.addLast("List");
+        linkedlist list = new linkedlist();
+        list.addFirst(1);
+        list.addFirst(2);
+        list.addFirst(3);
+        list.addFirst(4);
+        list.addFirst(5);
         list.printList();
 
-        list.deleteFirst();
-        list.printList();
-        list.deleteLast();
+//        list.reverseIterate();
+        list.head = list.reverseRecursive(list.head);
         list.printList();
     }
 }

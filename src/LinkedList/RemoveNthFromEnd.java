@@ -1,15 +1,17 @@
 package LinkedList;
 
+import Nodes.Nodes;
+
 public class RemoveNthFromEnd {
 
 
-    public static ListNode removeNthNodeFromEnd(ListNode head, int n){
+    public static Nodes removeNthNodeFromEnd(Nodes head, int n){
         if(head.next == null){
             return null;
         }
 
         int size = 0;
-        ListNode current = head;
+        Nodes current = head;
         while(current!= null){
             current = current.next;
             size++;
@@ -21,7 +23,7 @@ public class RemoveNthFromEnd {
 
         int indexToDelete = size - n;
 
-        ListNode prev = head;
+        Nodes prev = head;
         int i = 1;
         while(i<indexToDelete){
             prev = prev.next;

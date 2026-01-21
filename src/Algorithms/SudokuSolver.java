@@ -1,3 +1,5 @@
+package Algorithms;
+
 public class SudokuSolver {
     public boolean isSafe(char[][] board, int row, int col, int number) {
         // Check row and column

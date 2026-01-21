@@ -1,12 +1,14 @@
 package LinkedList;
 
+import Nodes.Nodes;
+
 public class PalindromeLinkedList {
-    public static ListNode reverse(ListNode head){
-        ListNode prev = null;
-        ListNode curr = head;
+    public static Nodes reverse(Nodes head){
+        Nodes prev = null;
+        Nodes curr = head;
 
         while (curr != null){
-            ListNode next = curr.next;
+            Nodes next = curr.next;
             curr.next = prev;
             prev = curr;
             curr = next;
@@ -14,9 +16,9 @@ public class PalindromeLinkedList {
         return prev;
     }
 
-    public static ListNode findMiddle(ListNode head){
-        ListNode slow = head;
-        ListNode fast = head;
+    public static Nodes findMiddle(Nodes head){
+        Nodes slow = head;
+        Nodes fast = head;
         while(fast.next != null && fast.next.next != null){
             slow = slow.next;
             fast = fast.next.next;
@@ -24,17 +26,17 @@ public class PalindromeLinkedList {
         return slow;
     }
 
-    public static Boolean isPalindrome(ListNode head){
+    public static Boolean isPalindrome(Nodes head){
         if(head == null || head.next == null){
             return true;
         }
 
-        ListNode middle = findMiddle(head);
-        ListNode secondHalfStart = reverse(middle.next);
-        ListNode firstHalfStart = head;
+        Nodes middle = findMiddle(head);
+        Nodes secondHalfStart = reverse(middle.next);
+        Nodes firstHalfStart = head;
 
         while(secondHalfStart != null){
-            if(firstHalfStart.val != secondHalfStart.val){
+            if(firstHalfStart.data != secondHalfStart.data){
                 return false;
             }
             firstHalfStart = firstHalfStart.next;
@@ -47,7 +49,7 @@ public class PalindromeLinkedList {
         MyLinkedLIst list = new MyLinkedLIst();
         list.addLast(1);
         list.addLast(2);
-        list.addLast(3);
+        list.addLast(2);
         list.addLast(1);
 
         list.printList();

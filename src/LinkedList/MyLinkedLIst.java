@@ -1,15 +1,17 @@
 package LinkedList;
 
+import Nodes.Nodes;
+
 public class MyLinkedLIst {
-    ListNode head;
+    Nodes head;
 
     public void addLast(int val){
-        ListNode newNode = new ListNode(val);
+        Nodes newNode = new Nodes(val);
         if(head==null){
             head=newNode;
             return;
         }
-        ListNode temp = head;
+        Nodes temp = head;
         while(temp.next != null){
             temp = temp.next;
         }
@@ -17,15 +19,15 @@ public class MyLinkedLIst {
     }
 
     public void addFirst(int val){
-        ListNode newNode = new ListNode(val);
+        Nodes newNode = new Nodes(val);
         newNode.next = head;
         head = newNode;
     }
 
     public void printList(){
-        ListNode temp = head;
+        Nodes temp = head;
         while(temp != null){
-            System.out.print(temp.val + " ->");
+            System.out.print(temp.data + " ->");
             temp = temp.next;
         }
         System.out.println("null");

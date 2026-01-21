@@ -1,3 +1,5 @@
+package Algorithms;
+
 public class SortingAlgorithms {
     public static void  printArray (int[] arr, String algoName) {
         System.out.printf("Sorted Array Using %s:\n", algoName);

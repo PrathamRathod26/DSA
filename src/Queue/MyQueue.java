@@ -54,4 +54,7 @@ public class MyQueue {
     public void printQueue(){
         System.out.println(Arrays.toString(arr));
     }
+
+    public static class MyStackQueue {
+    }
 }

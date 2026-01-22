@@ -199,10 +199,62 @@ public class QueueConcept {
         System.out.println("Is empty: " + q.isEmpty()); // true
     }
 
+    public static void testStackQueue(){
+        MyStackQueue q = new MyStackQueue();
+
+        System.out.println("---- Test Case 1: Empty queue ----");
+        System.out.println("Is empty: " + q.isEmpty()); // true
+
+        System.out.println("\n---- Test Case 2: Remove from empty ----");
+        System.out.println("Removed: " + q.remove()); // -1
+
+        System.out.println("\n---- Test Case 3: Peek from empty ----");
+        System.out.println("Peek: " + q.peek()); // -1
+
+        System.out.println("\n---- Test Case 4: Add first element ----");
+        q.add(10);
+        q.printQueue(); // [10]
+
+        System.out.println("\n---- Test Case 5: Add multiple elements ----");
+        q.add(20);
+        q.add(30);
+        q.add(40);
+        q.printQueue(); // FIFO order expected
+
+        System.out.println("\n---- Test Case 6: Peek after adds ----");
+        System.out.println("Peek: " + q.peek()); // 10
+
+        System.out.println("\n---- Test Case 7: Remove single element ----");
+        System.out.println("Removed: " + q.remove()); // 10
+        q.printQueue();
+
+        System.out.println("\n---- Test Case 8: Remove remaining elements ----");
+        System.out.println("Removed: " + q.remove()); // 20
+        System.out.println("Removed: " + q.remove()); // 30
+        System.out.println("Removed: " + q.remove()); // 40
+        q.printQueue(); // empty
+
+        System.out.println("\n---- Test Case 9: Remove when empty again ----");
+        System.out.println("Removed: " + q.remove()); // -1
+
+        System.out.println("\n---- Test Case 10: Add after empty ----");
+        q.add(50);
+        q.add(60);
+        q.printQueue();
+
+        System.out.println("\n---- Test Case 11: FIFO verification ----");
+        System.out.println("Removed: " + q.remove()); // 50
+        System.out.println("Removed: " + q.remove()); // 60
+
+        System.out.println("\n---- Test Case 12: Final empty check ----");
+        System.out.println("Is empty: " + q.isEmpty()); // true
+    }
+
     public static void main(String[] args) {
 //        testArrayQueue();
 //        testCircularQueue();
 //        testLLQueue();
+//        testStackQueue();
 //        testQueue();
     }
 }

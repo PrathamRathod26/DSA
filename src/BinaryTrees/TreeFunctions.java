@@ -76,8 +76,4 @@ public class TreeFunctions {
         return new TreeInfo(myHeight,myDiameter);
     }
 
-    static boolean isSubTree(BTNodes root, BTNodes subRoot){
-
-    }
-
 }

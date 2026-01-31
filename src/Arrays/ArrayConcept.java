@@ -1,5 +1,7 @@
 package Arrays;
 
+import Algorithms.SudokuSolver;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -50,11 +52,26 @@ public class ArrayConcept {
 //        int[] range = searchRange(nums,8);
 //        System.out.println(Arrays.toString(range));
 
-        int[] nums = {1,3,5,6,7};
-        int a = searchInput(nums, 8);
-        System.out.println(a);
+//        int[] nums = {1,3,5,6,7};
+//        int a = searchInput(nums, 8);
+//        System.out.println(a);
 
+//        char[][] board = {
+//                {'8','3','.','.','7','.','.','.','.'},
+//                {'6','.','.','1','9','5','.','.','.'},
+//                {'.','9','8','.','.','.','.','6','.'},
+//                {'8','.','.','.','6','.','.','.','3'},
+//                {'4','.','.','8','.','3','.','.','1'},
+//                {'7','.','.','.','2','.','.','.','6'},
+//                {'.','6','.','.','.','.','2','8','.'},
+//                {'.','.','.','4','1','9','.','.','5'},
+//                {'.','.','.','.','8','.','.','7','9'}
+//        };
+//        boolean valid = isValidSudoku(board);
+//        System.out.println(valid);
+
+        int[] digits = {9,9,9,9,9,9};
+        int[] a = plusOne(digits);
+        System.out.println(Arrays.toString(a));
     }
-
-
 }

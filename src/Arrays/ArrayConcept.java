@@ -10,6 +10,11 @@ import static Arrays.ArrayLeetCode.*;
 
 public class ArrayConcept {
     public static void main(String[] args) {
+
+        int[] nums = {-10,-8,-2,1,2,5,6};
+        int[] l = twoSum(nums, 0);
+        System.out.println(Arrays.toString(l));
+
 //        int[] nums = {-1,0,1,2,-1,4};
 //        List<List<Integer>> l = threeSum(nums, 1);
 //        System.out.println(l);
@@ -70,8 +75,11 @@ public class ArrayConcept {
 //        boolean valid = isValidSudoku(board);
 //        System.out.println(valid);
 
-        int[] digits = {9,9,9,9,9,9};
-        int[] a = plusOne(digits);
-        System.out.println(Arrays.toString(a));
+//        int[] digits = {9,9,9,9,9,9};
+//        int[] a = plusOne(digits);
+//        System.out.println(Arrays.toString(a));
+
+//        int[] prices = {7,6,4,3,1};
+//        System.out.println(maxProfit(prices));
     }
 }

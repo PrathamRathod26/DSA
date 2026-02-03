@@ -3,6 +3,30 @@ package Arrays;
 import java.util.*;
 
 public class ArrayLeetCode {
+
+    public static int[] twoSum (int[] arr, int target){
+        int i = 0;
+        int j = 1;
+        int[] index = new int[2];
+
+        while(i<arr.length-1){
+            if(j>arr.length-1){
+                i++;
+                j = i+1;
+            }
+            int sum = arr[i] + arr[j];
+            if(sum==target){
+                index[0] = i + 1;
+                index[1] = j + 1;
+                break;
+            } else {
+                j++;
+            }
+        }
+
+        return index;
+    }
+
     public static List<List<Integer>> threeSum(int[] arr, int target){
         List<List<Integer>> l = new ArrayList<>();
         Arrays.sort(arr);
@@ -306,5 +330,20 @@ public class ArrayLeetCode {
             digits[i]++;
         }
         return digits;
+    }
+
+    public static int maxProfit(int[] prices){
+
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+
+        for(int price : prices){
+            if(price < minPrice){
+                minPrice = price;
+            } else {
+                maxProfit = Math.max(maxProfit, price-minPrice);
+            }
+        }
+        return maxProfit;
     }
 }

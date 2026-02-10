@@ -1,19 +1,13 @@
 package Arrays;
 
-import Algorithms.SudokuSolver;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import static Arrays.ArrayLeetCode.*;
 
 public class ArrayConcept {
     public static void main(String[] args) {
 
-        int[] nums = {-10,-8,-2,1,2,5,6};
-        int[] l = twoSum(nums, 0);
-        System.out.println(Arrays.toString(l));
+//        int[] nums = {-10,-8,-2,1,2,5,6};
+//        int[] l = twoSum(nums, 0);
+//        System.out.println(Arrays.toString(l));
 
 //        int[] nums = {-1,0,1,2,-1,4};
 //        List<List<Integer>> l = threeSum(nums, 1);
@@ -81,5 +75,15 @@ public class ArrayConcept {
 
 //        int[] prices = {7,6,4,3,1};
 //        System.out.println(maxProfit(prices));
+
+//        int[] arr = {0,1,3,0,0,5,6};
+//        moveZeros(arr);
+//        System.out.println(Arrays.toString(arr));
+
+//        int[] arr = {1,12,-5,-6,50,3};
+//        int [] arr = {4};
+        int[] arr = {0, 4, 0, 3, 2};
+        double avg = findMaxAverage(arr, 1);
+        System.out.println(avg);
     }
 }

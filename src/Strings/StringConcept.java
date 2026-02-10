@@ -21,7 +21,11 @@ public class StringConcept {
 //        String s = "abcabcbb";
 //        System.out.println(lengthOfLongestSubstring(s));
 
-        String s = "A man, a plan, a canal: Panama";
-        System.out.println(isPalindrome(s));
+//        String s = "A man, a plan, a canal: Panama";
+//        System.out.println(isPalindrome(s));
+
+        String s = "abc";
+        String t = "ahbgdc";
+        System.out.println(isSubsequence(s,t));
     }
 }

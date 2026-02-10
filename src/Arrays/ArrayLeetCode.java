@@ -5,26 +5,17 @@ import java.util.*;
 public class ArrayLeetCode {
 
     public static int[] twoSum (int[] arr, int target){
-        int i = 0;
-        int j = 1;
-        int[] index = new int[2];
+        HashMap<Integer,Integer> hp = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            int complement = target - arr[i];
 
-        while(i<arr.length-1){
-            if(j>arr.length-1){
-                i++;
-                j = i+1;
+            if(hp.containsKey(complement)){
+                return new int[] {hp.get(complement) + 1, i + 1};
             }
-            int sum = arr[i] + arr[j];
-            if(sum==target){
-                index[0] = i + 1;
-                index[1] = j + 1;
-                break;
-            } else {
-                j++;
-            }
+            hp.put(arr[i], i);
         }
 
-        return index;
+        return new int[] {0,0};
     }
 
     public static List<List<Integer>> threeSum(int[] arr, int target){
@@ -345,5 +336,48 @@ public class ArrayLeetCode {
             }
         }
         return maxProfit;
+    }
+
+    public static void swap(int[] arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    public static void moveZeros(int[] arr){
+        int j = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i]==0){
+                j = i;
+                break;
+            }
+        }
+        if(j==-1) return;
+        for (int i = j+1; i < arr.length; i++) {
+            if(arr[i]!=0){
+                swap(arr,i,j);
+                j++;
+            }
+        }
+    }
+
+    public static double findMaxAverage(int[] nums, int k) {
+        double windowSum = 0;
+
+        // first window
+        for (int i = 0; i < k; i++) {
+            windowSum += nums[i];
+        }
+
+        double maxSum = windowSum;
+
+        for (int i = k; i < nums.length; i++) {
+            windowSum = windowSum - nums[i - k] + nums[i];
+            if (windowSum > maxSum) {
+                maxSum = windowSum;
+            }
+        }
+
+        return maxSum / k;
     }
 }

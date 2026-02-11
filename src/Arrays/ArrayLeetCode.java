@@ -1,5 +1,7 @@
 package Arrays;
 
+import Nodes.ListNode;
+
 import java.util.*;
 
 public class ArrayLeetCode {
@@ -377,7 +379,41 @@ public class ArrayLeetCode {
                 maxSum = windowSum;
             }
         }
-
         return maxSum / k;
     }
+
+    public static ListNode middleNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    public static int[] sortedSquares(int[] nums) {
+        int n = nums.length;
+        int left = 0, right = n-1;
+        int[] result = new int[n];
+
+        int index = n-1;
+
+        while(left<=right){
+            int leftSquare = nums[left] * nums[left];
+            int rightSquare = nums[right] * nums[right];
+
+            if(leftSquare>rightSquare){
+                result[index] = leftSquare;
+                left++;
+            } else {
+                result[index] = rightSquare;
+                right--;
+            }
+            index--;
+        }
+        return result;
+    }
+
 }

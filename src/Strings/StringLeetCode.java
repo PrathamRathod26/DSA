@@ -65,24 +65,6 @@ public class StringLeetCode {
         }
     }
 
-//    public static int lengthOfLongestSubstring(String s){
-//        int max = 0;
-//        int left = 0, right = 0;
-//        HashMap<Character, Integer> hp = new HashMap<>();
-//
-//        while(right<s.length()){
-//            if(!hp.containsKey(s.charAt(right)) && hp.get(s.charAt(right)) <= left){
-//                hp.put(s.charAt(left), left);
-//                right++;
-//            } else {
-//                int lastIndex = hp.get(s.charAt(left));
-//                left = Math.max(left, lastIndex + 1);
-//            }
-//        }
-//        System.out.println(hp);
-//        return max;
-//    }
-
     public static boolean isPalindrome(String s){
         int l = 0;
         int r = s.length()-1;
@@ -113,6 +95,39 @@ public class StringLeetCode {
             }
         }
         return i == s.length();
+    }
+
+    public static int countGoodSubstrings(String s) {
+        int count = 0;
+
+        for(int i = 0; i<s.length()-3; i++){
+            char a = s.charAt(i);
+            char b = s.charAt(i + 1);
+            char c = s.charAt(i + 2);
+            if(a != b && b != c && a != c){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static int lengthOfLongestSubstring(String s) {
+        HashMap<Character,Integer> map = new HashMap<>();
+        int l = 0;
+        int r = 0;
+        int maxLength = 0;
+
+        while(r<s.length()){
+            if(map.containsKey(s.charAt(r))){
+                l = Math.max(l,map.get(s.charAt(r))+1);
+            }
+
+            int length = r-l+1;
+            maxLength = Math.max(maxLength,length);
+            map.put(s.charAt(r),r);
+            r++;
+        }
+        return maxLength;
     }
 
 

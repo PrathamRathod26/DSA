@@ -3,45 +3,72 @@ package LinkedList;
 import Nodes.ListNode;
 
 public class LinkedListLeetCode {
-    public static ListNode createLLFromArray(int[] arr){
-        ListNode dummy = new ListNode();
+    public static ListNode createLLFromArray(int[] arr) {
+        ListNode dummy = new ListNode(0); // sentinel node
         ListNode current = dummy;
-        for(int a : arr){
+
+        for (int a : arr) {
             current.next = new ListNode(a);
             current = current.next;
         }
-        return dummy.next;
+
+        return dummy.next; // head of the created linked list
     }
 
-    public static void printLL(ListNode a){
-        while(a.next != null){
+
+    public static void printLL(ListNode a) {
+        while (a != null) {
             System.out.print(a.val + " ");
             a = a.next;
         }
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2){
-        ListNode dummy = new ListNode(0); // creating a dummy list
-        ListNode curr = dummy; // intialising a pointer
-        int carry = 0; // initialising our carry with 0 initial
-        // while loop will run, until l1 OR l2 not reaches null OR if they both reaches null. But our carry has some value in it.
-        // We will add that as well into our list
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
+        int carry = 0;
         while(l1 != null || l2 != null || carry == 1){
-            int sum = 0; // initialising our sum
-            if(l1 != null){ // adding l1 to our sum & moving l1
+            int sum = 0;
+            if(l1 != null){
                 sum += l1.val;
                 l1 = l1.next;
             }
-            if(l2 != null){ // adding l2 to our sum & moving l2
+            if(l2 != null){
                 sum += l2.val;
                 l2 = l2.next;
             }
-            sum += carry; // if we have carry then add it into our sum
-            carry = sum/10; // if we get carry, then divide it by 10 to get the carry
-            // the value we'll get by modulating it, will become as new node so. add it to our list
-            curr.next = new ListNode(sum % 10); // curr will point to that new node if we get
-            curr = curr.next; // update the current every time
+            sum += carry;
+            carry = sum/10;
+            curr.next = new ListNode(sum % 10);
+            curr = curr.next;
         }
         return dummy.next;
+    }
+
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+        if(head == null){
+            return null;
+        }
+
+        int size = 0;
+        while(head != null){
+            size++;
+            head = head.next;
+        }
+
+        if(n>size){
+            return null;
+        }
+
+        int position = size - n - 1;
+        System.out.println(position);
+
+        while(head!=null){
+            if(position==1){
+                head.next = head.next.next;
+            }
+            position--;
+        }
+        return null;
     }
 }

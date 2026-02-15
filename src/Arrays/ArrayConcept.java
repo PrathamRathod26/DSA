@@ -96,9 +96,12 @@ public class ArrayConcept {
 //        ListNode res = middleNode(l);
 //        System.out.println(res.val);
 
-        int[] arr = {-1,-3,0,5,7};
-        int[] res = sortedSquares(arr);
-        System.out.println(Arrays.toString(res));
+//        int[] arr = {-1,-3,0,5,7};
+//        int[] res = sortedSquares(arr);
+//        System.out.println(Arrays.toString(res));
 
+        int[] arr = {2,0,2,1,1,0};
+        sortColors(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }

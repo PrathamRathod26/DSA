@@ -129,7 +129,6 @@ public class ArrayLeetCode {
 
     public static int removeElement(int[] nums, int val) {
         int j=0;
-        int length = nums.length;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != val) {
                 nums[j] = nums[i];
@@ -160,8 +159,6 @@ public class ArrayLeetCode {
     }
 
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        double median = 0;
-        double sum = 0;
         int length = nums1.length+ nums2.length;
         int[] a = new int[length];
         int i = 0, j = 0, k = 0;
@@ -275,8 +272,11 @@ public class ArrayLeetCode {
 
     public static boolean isValidSudoku(char[][] board) {
         int n = 9;
+        @SuppressWarnings("unchecked")
         HashSet<Character>[] row = new HashSet[n];
+        @SuppressWarnings("unchecked")
         HashSet<Character>[] col = new HashSet[n];
+        @SuppressWarnings("unchecked")
         HashSet<Character>[] box = new HashSet[n];
 
 
@@ -294,12 +294,12 @@ public class ArrayLeetCode {
                 }
                 int boxIndex = 3 * (i/3) + (j/3);
 
-                if(row[i].contains(cell)||col[j].contains(cell)||box[boxIndex].contains(cell)){
+                if(row[i].contains(cell)||col[i].contains(cell)||box[boxIndex].contains(cell)){
                     return false;
                 }
 
                 row[i].add(cell);
-                col[j].add(cell);
+                col[i].add(cell);
                 box[boxIndex].add(cell);
             }
         }
@@ -414,6 +414,13 @@ public class ArrayLeetCode {
             index--;
         }
         return result;
+    }
+
+    public static void sortColors(int[] nums){
+        HashMap<Integer,Integer> map = new HashMap();
+        for(int i = 0; i<nums.length; i++){
+            
+        }
     }
 
 }

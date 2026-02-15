@@ -46,29 +46,30 @@ public class LinkedListLeetCode {
     }
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
-        if(head == null){
+        if(head.next == null){
             return null;
         }
 
         int size = 0;
-        while(head != null){
+        ListNode current = head;
+        while(current != null){
+            current = current.next;
             size++;
-            head = head.next;
         }
 
-        if(n>size){
-            return null;
+        if(n==size){
+            return head.next;
         }
 
-        int position = size - n - 1;
-        System.out.println(position);
-
-        while(head!=null){
-            if(position==1){
-                head.next = head.next.next;
-            }
-            position--;
+        int indexToSearch = size - n;
+        ListNode prev = head;
+        int i = 1;
+        while (i < indexToSearch) {
+            prev = prev.next;
+            i++;
         }
-        return null;
+        prev.next = prev.next.next;
+
+        return head;
     }
 }

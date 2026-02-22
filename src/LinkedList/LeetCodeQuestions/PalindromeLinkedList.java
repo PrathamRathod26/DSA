@@ -1,5 +1,6 @@
-package LinkedList;
+package LinkedList.LeetCodeQuestions;
 
+import LinkedList.MyLinkedList;
 import Nodes.Nodes;
 
 public class PalindromeLinkedList {
@@ -46,7 +47,7 @@ public class PalindromeLinkedList {
     }
 
     public static void main(String[] args) {
-        MyLinkedLIst list = new MyLinkedLIst();
+        MyLinkedList list = new MyLinkedList();
         list.addLast(1);
         list.addLast(2);
         list.addLast(2);

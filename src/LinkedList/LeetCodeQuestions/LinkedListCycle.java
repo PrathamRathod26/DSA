@@ -1,12 +1,10 @@
-package LinkedList;
+package LinkedList.LeetCodeQuestions;
 
+import LinkedList.MyLinkedList;
 import Nodes.Nodes;
 
 public class LinkedListCycle {
     public static boolean hasCycle(Nodes head){
-        if(head==null){
-            return false;
-        }
         Nodes fast = head;
         Nodes slow = head;
 
@@ -35,9 +33,9 @@ public class LinkedListCycle {
         System.out.println(n1.data + " ->" + n2.data + " ->" + n3.data + " ->" + n4.data + " ->" +n2.data);
         System.out.println("Does list have cycle? " + hasCycle(n1));
 
-        MyLinkedLIst list = new MyLinkedLIst();
+        MyLinkedList list = new MyLinkedList();
         list.addLast(1);
-        list.addLast(2);;
+        list.addLast(2);
         list.addLast(3);
         list.addLast(4);
         list.addLast(5);

@@ -1,10 +1,9 @@
-package LinkedList;
+package LinkedList.LeetCodeQuestions;
 
+import LinkedList.MyLinkedList;
 import Nodes.Nodes;
 
 public class RemoveNthFromEnd {
-
-
     public static Nodes removeNthNodeFromEnd(Nodes head, int n){
         if(head.next == null){
             return null;
@@ -35,7 +34,7 @@ public class RemoveNthFromEnd {
     }
 
     public static void main(String[] args) {
-        MyLinkedLIst list = new MyLinkedLIst();
+        MyLinkedList list = new MyLinkedList();
         list.addLast(1);
         list.addLast(2);;
         list.addLast(3);

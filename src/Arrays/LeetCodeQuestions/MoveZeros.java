@@ -1,13 +1,8 @@
 package Arrays.LeetCodeQuestions;
 
+import static Arrays.HelperFunctions.swap;
+
 public class MoveZeros {
-
-    private static void swap(int[] arr, int i, int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
     public static void moveZeros(int[] arr){
         int j = -1;
         for (int i = 0; i < arr.length; i++) {
